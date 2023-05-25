@@ -22,8 +22,8 @@ class TrainsTableSeeder extends Seeder
             $newtrain->agency = $faker->name;
             $newtrain->departure = $faker->city;
             $newtrain->arrivals = $faker->city;
-            $newtrain->time_departure = $faker->dateTime;
-            $newtrain->time_arrival = $faker->dateTime;
+            $newtrain->time_departure = $faker->dateTimeBetween('-1 week', '+1 week');
+            $newtrain->time_arrival = $faker->dateTimeBetween('-1 week', '+1 week');
             $newtrain->train_code = $faker->postcode;
             $newtrain->carriages = $faker->randomDigit;
             $newtrain->in_time = $checktrain;
