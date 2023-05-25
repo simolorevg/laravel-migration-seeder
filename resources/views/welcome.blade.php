@@ -1,9 +1,9 @@
 @extends('layouts.app')
-<h1 class="text-center">
-    Treni
-</h1>
+<div class="container d-flex justify-content-center align-items-center p-2">
+    <img src="{{ Vite::asset('resources\img\logo-no-background.png') }}" alt="Booltrain" width="200" height="100">
+</div>
 <div class="container d-flex justify-content-center align-items-center">
-    <table class="table">
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -19,8 +19,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                @foreach ($trains as $train)
+            @foreach ($trains as $train)
+                <tr>
                     <th scope="row">{{ $train->id }}</th>
                     <td>{{ $train->agency }}</td>
                     <td>{{ $train->train_code }}</td>
@@ -31,20 +31,20 @@
                     <td>{{ $train->time_arrival }}</td>
                     <td>
                         @if ($train->in_time == 1)
-                            <p>SI</p>
+                            <p class="badge text-bg-success">SI</p>
                         @else
-                            <p>NO</p>
+                            <p class="badge text-bg-danger">NO</p>
                         @endif
                     </td>
                     <td>
                         @if ($train->late == 1)
-                            <p>SI</p>
+                            <p class="badge text-bg-danger">SI</p>
                         @else
-                            <p>NO</p>
+                            <p class="badge text-bg-success">NO</p>
                         @endif
                     </td>
-                @endforeach
-            </tr>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

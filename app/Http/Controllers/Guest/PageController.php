@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Models\Train;
+use Faker\Generator as Faker;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
